@@ -1,9 +1,18 @@
 ---
+
 - hosts: localhost
   vars:
     home: /home/ubuntu
   tasks:
+
+  - name: debug variable
+    debug: var=home
+
   - name: creating file
     file:
       path: "{{ home }}/test-ansible"
       state: touch
+    register: task1
+
+  - name: debugging task output
+    debug: var=task1

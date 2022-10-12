@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  vars:
+    home: /home/ec2-user
+  tasks:
+  - name: creating file
+    file:
+      path: "{{ home }}/test-ansible"
+      state: touch

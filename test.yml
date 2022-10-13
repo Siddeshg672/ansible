@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: app_server
   vars:
     home: /home/ubuntu
   become: yes

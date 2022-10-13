@@ -4,6 +4,7 @@
   vars:
     home: /home/ubuntu
   become: yes
+  become_user: ubuntu
   become_method: sudo
   tasks:
 

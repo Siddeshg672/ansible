@@ -20,6 +20,11 @@
   - name: debugging task output
     debug: var=task1
     
+  - name: Log into DockerHub
+    docker_login:
+      username: docker
+      password: rekcod
+    
   - name: remove container
     docker_container:
       name: tomcatwebapp

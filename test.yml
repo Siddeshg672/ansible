@@ -19,3 +19,20 @@
 
   - name: debugging task output
     debug: var=task1
+    
+  - name: remove container
+    docker_container:
+      name: tomcatwebapp
+      state: absent
+    
+  - name: pull image from docker hub
+    docker_image:
+      name: siddeshg672/testdockerpush:july_{{ BUILD_NUMBER }}
+      
+  - name: Re-create a redis container
+    docker_container:
+      name: tomcatwebapp
+      image: siddeshg672/testdockerpush:july_{{ BUILD_NUMBER }}
+      state: present
+      exposed_ports:
+        - 6379
